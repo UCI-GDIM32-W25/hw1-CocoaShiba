@@ -24,15 +24,15 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && _numSeeds > 0)
         {
-            GameObject instantiatedPlant = Instantiate(_plantPrefab);
-            instantiatedPlant.transform.position = transform.position;
-            _numSeeds--;
-            _plantCountUI.UpdateSeeds(_numSeeds, 5 - _numSeeds);
+            PlantSeed();
         }
     }
 
     public void PlantSeed ()
     {
-        
+        GameObject instantiatedPlant = Instantiate(_plantPrefab);
+        instantiatedPlant.transform.position = transform.position;
+        _numSeeds--;
+        _plantCountUI.UpdateSeeds(_numSeeds, 5 - _numSeeds);
     }
 }
